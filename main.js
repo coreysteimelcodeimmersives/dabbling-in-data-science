@@ -16,7 +16,7 @@ async function setup() {
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Number of DJ Followers over 20k in the UK',
+            label: '# Followers',
             data: followersData,
             backgroundColor: (context) => {
                 const chart = context.chart;
@@ -53,6 +53,24 @@ async function setup() {
             scales: {
                 y: {
                     beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'DJ Die-hards',
+                    font: {
+                        size: 48
+                    }
+                },
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                            size: 24
+                        },
+                        // fillStyle: getGradient(ctx, chartArea, scales),
+                    }
                 }
             }
         },
